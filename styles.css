@@ -75,7 +75,7 @@ body {
 .logo {
   display: block;
   width: 100vw;
-  max-width: 1400px;
+  max-width: 720px;
   height: auto;
   position: relative;
   left: 50%;
@@ -84,7 +84,7 @@ body {
   margin-right: -50vw;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 720px) {
   .logo {
     left: 0;
     right: 0;
