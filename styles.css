@@ -397,6 +397,15 @@ h3 {
   color: var(--gold);
 }
 
+.footer-legal {
+  margin-top: 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--cream);
+  opacity: 0.55;
+  text-align: center;
+}
+
 /* =========================================================
    Focus visibility
    ========================================================= */
