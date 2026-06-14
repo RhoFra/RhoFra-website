@@ -1,0 +1,429 @@
+/* =========================================================
+   Rhofra — eigen wijze beweging
+   Palette: cream paper, olive green, warm gold/tan
+   ========================================================= */
+
+:root {
+  --cream:      #F4ECE0;
+  --cream-deep: #EBE0D0;
+  --green:      #4F5D33;
+  --green-deep: #3C4626;
+  --gold:       #BBA176;
+  --moss:       #8C9B6E;
+  --ink:        #3A3A33;
+
+  --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --sans:  "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --max-width: 760px;
+  --side-pad: clamp(1.5rem, 6vw, 4rem);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--cream);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+/* =========================================================
+   Signature element — winding line divider beneath hero nav
+   ========================================================= */
+
+.trail-divider {
+  display: block;
+  width: 100%;
+  height: 24px;
+  color: var(--gold);
+  opacity: 0.6;
+}
+
+/* =========================================================
+   Header / Hero
+   ========================================================= */
+
+.hero {
+  position: relative;
+  background: var(--cream);
+  padding-top: 2rem;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+}
+
+.hero-nav {
+  display: flex;
+  gap: clamp(1rem, 4vw, 2.5rem);
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+}
+
+.hero-nav a {
+  color: var(--green-deep);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease, color 0.25s ease;
+  padding-bottom: 0.2rem;
+}
+
+.hero-nav a:hover,
+.hero-nav a:focus-visible {
+  border-color: var(--gold);
+  color: var(--green);
+}
+
+/* =========================================================
+   Layout helpers
+   ========================================================= */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--side-pad);
+  position: relative;
+}
+
+.section {
+  position: relative;
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+  z-index: 1;
+}
+
+.section.alt {
+  background: var(--cream-deep);
+}
+
+/* =========================================================
+   Typography
+   ========================================================= */
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.75rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  color: var(--green-deep);
+  font-weight: 500;
+  margin: 0 0 1.25rem;
+  letter-spacing: 0.005em;
+}
+
+.hero-title {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.25;
+  max-width: 14ch;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.intro-text p,
+.prose p,
+.life-block p {
+  margin: 0 0 1.1rem;
+  max-width: 60ch;
+}
+
+.life-block {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(187, 161, 118, 0.3);
+}
+
+/* Pull quote — echoes the looping line of the logo via the side rule */
+.pull-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 2.6vw, 1.4rem);
+  color: var(--green);
+  line-height: 1.6;
+  margin: 2.25rem 0;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--gold);
+  max-width: 48ch;
+}
+
+/* =========================================================
+   Services
+   ========================================================= */
+
+.services {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.service {
+  padding: 2rem clamp(1.25rem, 4vw, 2.25rem);
+  background: var(--cream-deep);
+  border-radius: 2px;
+  border-top: 2px solid var(--gold);
+}
+
+.service h3 {
+  margin-bottom: 0.6rem;
+}
+
+.service-lead {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--green);
+  font-size: 1.05rem;
+  margin: 0 0 0.85rem;
+}
+
+.service p {
+  margin: 0 0 0.85rem;
+  max-width: 60ch;
+}
+
+.service p:last-child { margin-bottom: 0; }
+
+/* =========================================================
+   Offers / pricing
+   ========================================================= */
+
+.offers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 2.25rem 0 2.5rem;
+}
+
+.offer {
+  background: var(--cream);
+  border: 1px solid rgba(187, 161, 118, 0.5);
+  border-radius: 2px;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+}
+
+.offer-label {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--green-deep);
+  margin: 0 0 0.35rem;
+  font-weight: 500;
+}
+
+.offer-detail {
+  font-size: 0.9rem;
+  color: var(--ink);
+  opacity: 0.75;
+  margin: 0 0 0.75rem;
+}
+
+.offer-price {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0;
+}
+
+.offer-price span {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--ink);
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+/* =========================================================
+   Locations
+   ========================================================= */
+
+.locations-title {
+  margin-top: 2.5rem;
+}
+
+.locations {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.locations li {
+  position: relative;
+  padding-left: 1.4rem;
+  max-width: 60ch;
+}
+
+.locations li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--moss);
+}
+
+/* =========================================================
+   Contact
+   ========================================================= */
+
+.contact {
+  text-align: center;
+}
+
+.contact-lead {
+  max-width: 40ch;
+  margin: 0 auto 2rem;
+  opacity: 0.85;
+}
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(2rem, 8vw, 5rem);
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+@media (max-width: 480px) {
+  .contact-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+.contact-details p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.footer {
+  background: var(--green-deep);
+  color: var(--cream);
+  padding: 2.5rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.footer-mark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* =========================================================
+   Focus visibility
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   Scroll-reveal (subtle, respects reduced motion)
+   ========================================================= */
+
+.section .container > * {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: rise 0.7s ease forwards;
+  animation-play-state: paused;
+}
+
+.section.is-visible .container > * {
+  animation-play-state: running;
+}
+
+.section .container > *:nth-child(1) { animation-delay: 0s; }
+.section .container > *:nth-child(2) { animation-delay: 0.05s; }
+.section .container > *:nth-child(3) { animation-delay: 0.1s; }
+.section .container > *:nth-child(4) { animation-delay: 0.15s; }
+.section .container > *:nth-child(5) { animation-delay: 0.2s; }
+.section .container > *:nth-child(n+6) { animation-delay: 0.25s; }
+
+@keyframes rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section .container > * {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
